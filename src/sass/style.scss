@@ -9,4 +9,142 @@ Text Domain: superiocity_rchn
 */
 
 
+/* Mixins */
+@mixin vertical-menu {
+  background-image: url(images/bg-cf.jpg);
+  background-repeat: repeat;
+  background-color: #000;
+  border: solid 1px rgba(128, 128, 128, .8);
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, .5);
+  color: #fff;
+  padding: 1em;
+  z-index: 200;
+
+  li {
+    display: block;
+  }
+}
+
+/* Variables */
+$color__text-screen-dark: #ddd;
+$font-fancy: Electrolize, arial, sans-serif;
+$font-normal: "Titillium Web", verdana, arial, sans-serif;
+
+
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonts */
+body {
+  font-size: 18px;
+}
+
+/* Components */
+.button, button {
+  -webkit-appearance: none;
+}
+
+/* Header */
+.site-header {
+  background-color: #000;
+  color: #fff;
+}
+
+.site-branding {
+  background: url(images/diamond-plate-top.jpg)  no-repeat center bottom;
+  background-size: 100% 100%;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
+.site-branding .logo {
+  width: 150px;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 1rem;
+  display: block;
+}
+
+
+/* Navigation */
+.main-navigation {
+  display: inline-block;
+  margin: .5em .5em 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  button {
+    background-image: linear-gradient(to bottom, #666, #000);
+    outline: none;
+    color: $color__text-screen-dark;
+    box-shadow: none;
+    border: solid 1px #666;
+    font-size: .8em;
+    padding: .5em;
+    cursor: pointer;
+    border-radius: .25em;
+  }
+
+  &.toggled button {
+    background-image: linear-gradient(to top, #666, #000);
+  }
+
+  & .menu {
+    display: none;
+    @include vertical-menu;
+    right: 0;
+    position: absolute;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .sub-menu, .children {
+      padding-left: 2em;
+      text-align: left;
+    }
+
+    li {
+      border-bottom: solid 1px rgba(128,128,128,1);
+      list-style: none;
+      white-space: nowrap;
+      font-family: $font-fancy;
+      font-size: 1em;
+      line-height: 2.2em;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    a, a:visited, a:active, a:hover {
+      color: $color__text-screen-dark;
+      text-decoration: none;
+      display: block;
+    }
+  }
+
+  &.toggled .menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
+}
+
 
