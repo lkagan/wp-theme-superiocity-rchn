@@ -103,5 +103,18 @@
                 self = self.parentElement;
             }
         }
+
+
+        /**
+         * Display / Hide the search box on larger screens
+         */
+        document.getElementById('search-icon-link').onclick = function() {
+            document.getElementById('search-form').style.display = 'block';
+        }
+
+        document.getElementById('search-close').onclick = function() {
+            document.getElementById('search-form').style.display = 'none';
+        }
+
     }
 )();

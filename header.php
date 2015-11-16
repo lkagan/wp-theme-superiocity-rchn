@@ -23,14 +23,37 @@
 <div id="page" class="hfeed">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="logo" src="<?= esc_url( get_stylesheet_directory_uri() )?>/images/rc-heli-nation-logo.svg" alt="<?php bloginfo( 'name' ); ?>"></a>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo-link"><img class="logo" width="75" height="75" src="<?= esc_url( get_stylesheet_directory_uri() )?>/images/rc-heli-nation-logo.svg" alt="<?php bloginfo( 'name' ); ?>"></a>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
+				<div class="menu-wrapper">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<a href="javascript:void(0);" id="search-icon-link"><i class="fa fa-search"></i></a>
+					<?php get_search_form( true ) ?>
+				</div>
+			</nav><!-- #site-navigation -->
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">menu <i class="fa fa-bars"></i></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<?php if ( is_front_page() ): ?>
+		<div class="hero">
+			<div class="tagline-buttons">
+				<h3><?php bloginfo( 'description' ) ?></h3>
+				<a href="https://itunes.apple.com/podcast/rc-heli-nation-v-2.0/id367091559?mt=2" class="button light">Subscribe on iTunes</a>
+				<a href="/rchn-and-android/" class="button light">Subscribe on Android</a>
+			</div>
+			<div class="vignette">
+				<?php if ( ! wp_is_mobile() ): ?>
+					<style>
+						#masthead { background: none; }
+						.site-branding {background-color: #000; }
+					</style>
+				<video muted autoplay src="<?= get_template_directory_uri() ?>/video/inverted-silhouette.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/inverted-silhouette-poster.jpg">
+					<source src="<?= get_template_directory_uri() ?>/video/inverted-silhouette.mp4">
+				</video>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php endif; ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+

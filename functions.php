@@ -80,6 +80,7 @@ add_action( 'widgets_init', 'superiocity_rchn_widgets_init' );
 function superiocity_rchn_scripts() {
 	$faVer      = '4.4.0';
 	$faURL      = "//maxcdn.bootstrapcdn.com/font-awesome/{$faVer}/css/font-awesome.min.css";
+	$gfURL      = '//fonts.googleapis.com/css?family=Play:400,700';
 	$mainJsFile = '/js/main.min.js';
 	$mainJsPath = get_stylesheet_directory() . $mainJsFile;
 	$mainJsURL  = get_stylesheet_directory_uri() . $mainJsFile;
@@ -87,6 +88,7 @@ function superiocity_rchn_scripts() {
 
 	wp_enqueue_style( 'superiocity_rchn-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', $faURL, null );
+	wp_enqueue_style( 'google-font', $gfURL, null );
 	wp_enqueue_script( 'main-script', $mainJsURL, null, $mainJsVer, true );
 }
 
