@@ -15,9 +15,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'superiocity_rchn' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'superiocity_rchn' ), 'WordPress' ); ?></a>
+			&copy; <?= date('Y') ?> RC Heli Nation LLC
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'superiocity_rchn' ), 'superiocity_rchn', '<a href="http://underscores.me/" rel="designer">Me</a>' ); ?>
+			Website design by <a href="http://www.superiocity.com/">Superiocity</a>
+
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

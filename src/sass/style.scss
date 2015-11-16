@@ -1,0 +1,384 @@
+/*!
+Theme Name: Superiocity RCHN
+Author: Larry Kagan
+Author URI: https://www.superiocity.com/
+Description: Proprietary theme for RC Heli Nation
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: superiocity_rchn
+*/
+
+
+/* Mixins */
+@mixin vertical-menu {
+  background: rgba(0,0,0, .85);
+  border: solid 1px rgba(128, 128, 128, .8);
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, .5);
+  color: #fff;
+  padding: 1em;
+
+  li {
+    display: block;
+  }
+}
+
+/* Variables */
+$color__text-screen-dark: #ddd;
+$color_brand1: #D87F18;
+$color_brand2: #cb6100;
+$font-fancy: Play, verdana, sans-serif;
+$font-normal:  arial, helvetica, sans-serif;
+
+
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+a img {
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Fonts */
+body {
+  font-size: 18px;
+  font-family: $font-normal;
+}
+
+/* Components */
+.button, button, input[type=submit] {
+  -webkit-appearance: none;
+  border: solid 1px #000;
+  border-radius: .25em;
+  padding: .5em 1em;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  font-family: $font-fancy;
+  color: #000;
+  background: rgba(255,255,255,.4);
+  outline: none;
+
+  &.light {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(0,0,0,.6);
+  }
+
+  &.solid {
+    background-image: linear-gradient(lighten($color_brand2, 10%), darken($color_brand2, 10%));
+    color: #fff;
+  }
+
+  &.solid:hover {
+    background-image: linear-gradient(lighten($color_brand2, 20%), $color_brand2);
+    transform: none;
+  }
+
+  &.solid:active {
+    background-image: linear-gradient(darken($color_brand2, 10%), lighten($color_brand2, 10%));
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform .2s;
+  }
+}
+
+button.menu-toggle {
+  transform: none;
+}
+
+/* Header */
+
+#page {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.site-branding {
+  position: relative;
+  z-index: 50;
+  background: #000 url(images/bg-cf.jpg) repeat;
+  color: #fff;
+  border-bottom: solid 1px #666;
+  box-shadow: 1px 0 10px #000;
+  text-align: center;
+
+  a {
+    display: inline-block;
+  }
+
+  .logo {
+    width: 75px;
+    margin: .5rem;
+    display: block;
+  }
+}
+
+.tagline-buttons {
+  top: 75%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 20;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  display: block;
+  text-align: center;
+
+  h3 {
+    color: #fff;
+    font-size: 1.25em;
+    font-family: $font-fancy;
+    letter-spacing: .1em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+  }
+
+  .button {
+    margin-top: 2em;
+    padding: .5em .5em;
+    font-size: .75em;
+    text-align: center;
+  }
+}
+
+/* Navigation */
+.main-navigation {
+  display: inline-block;
+  margin: .5em .5em 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  button {
+    background-image: linear-gradient(to bottom, #666, #000);
+    outline: none;
+    color: $color__text-screen-dark;
+    box-shadow: none;
+    border: solid 1px #666;
+    font-size: .8em;
+    padding: .5em;
+    cursor: pointer;
+    border-radius: .25em;
+  }
+
+  &.toggled button {
+    background-image: linear-gradient(to top, #666, #000);
+  }
+
+  & .menu-wrapper {
+    display: none;
+    @include vertical-menu;
+    right: 0;
+    position: absolute;
+    z-index: 30;
+    marign-top: 0;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      z-index: 510;
+    }
+
+    .sub-menu, .children {
+      padding-left: 2em;
+      text-align: left;
+    }
+
+    li {
+      border-bottom: solid 1px rgba(128,128,128,1);
+      list-style: none;
+      white-space: nowrap;
+      font-family: $font-fancy;
+      font-size: 1em;
+      line-height: 2.2em;
+      text-align: left;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    a, a:visited, a:active {
+      color: $color__text-screen-dark;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        color: $color_brand1;
+        transform: scale(1.1);
+        transition: all .1s;
+      }
+    }
+
+    li.current-menu-item a {
+      color: $color_brand1;
+    }
+
+    form {
+      border-top: solid 1px rgba(128, 128, 128, .8);
+      padding-top: 1em;
+
+      .title-bar {
+        display: none;
+      }
+
+      input, select {
+        width: 100%;
+      }
+
+      input[type=submit], select {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &.toggled .menu-wrapper {
+    display: block;
+  }
+}
+
+.fa.fa-search {
+  display: none;
+}
+
+#masthead {
+  background: url(images/backs-on-air.jpg) no-repeat fixed 60% center ;
+  background-size: cover;
+}
+
+.hero {
+  height: 80vh;
+  overflow: hidden;
+
+  .vignette {
+    background: radial-gradient(rgba(0,0,0,.3), rgba(0,0,0, .3) 50%, rgba(0,0,0,1)) no-repeat fixed;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  video {
+    filter: blur(3px) sepia(100%) brightness(80%);
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+  }
+}
+
+.content-center {
+  margin: 1rem;
+}
+
+.site-footer {
+  font-size: .75rem;
+}
+
+@media screen and (min-width: 1000px) {
+
+  .main-navigation {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-wrapper {
+      display: inline-block;
+      background: none;
+      border: none;
+      box-shadow: none;
+
+      li {
+        display: inline-block;
+        border-bottom: none;
+        margin: 0 .5em;
+      }
+
+      .sub-menu {
+        display: none;
+      }
+
+      #search-icon-link {
+        display: inline-block;
+      }
+
+      .fa-search {
+        display: inline;
+      }
+
+      .search-form {
+        display: none;
+        position: absolute;
+        right: 0;
+        background: rgba(0,0,0, .85);
+        padding: 1em;
+        border-radius: .25em;
+        box-shadow: 2px 2px 8px rgba(0,0,0,.5);
+        border: 1px solid #666;
+        background: #000 url(images/bg-cf.jpg) repeat;
+
+        .title-bar {
+          text-align: left;
+          display: block;
+
+          h4 {
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            top: -.5em;
+            font-family: $font-fancy;
+          }
+
+          #search-close {
+            float: right;
+            position: relative;
+            top: -.5em;
+            cursor: pointer;
+
+            &:hover {
+              color: $color_brand1;
+            }
+          }
+        }
+      }
+    }
+
+    & .menu-wrapper {
+      position: relative;
+    }
+  }
+
+  .menu-main-menu-container {
+    display: inline-block;
+  }
+
+  .tagline-buttons {
+    top: 30%;
+
+    .button {
+      font-size: 1em;
+      margin: 0 1em;
+    }
+
+    h3 {
+      font-size: 1.4em;
+    }
+  }
+}

@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    cache = require('gulp-cache'),
+    //cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     sourcemaps = require('gulp-sourcemaps'),
     sassPath = './src/sass',
@@ -40,8 +40,8 @@ gulp.task('scripts', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
         .pipe(rename({suffix: '.min'}))
-        //.pipe(uglify())
-        //.pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/js'}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/js'}))
         .pipe(gulp.dest('./js'))
         .pipe(livereload())
 });
@@ -49,7 +49,7 @@ gulp.task('scripts', function () {
 // Compress images
 gulp.task('images', function () {
     return gulp.src(imgPath + '/**/*')
-        .pipe(cache(imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
+        .pipe(imagemin({optimizationLevel: 3, progressive: true, interlaced: true}))
         .pipe(gulp.dest('images'))
         .pipe(livereload())
 });
@@ -67,9 +67,9 @@ gulp.task('watch', function () {
     gulp.watch(jsPath + '/**/*', ['scripts']);
     gulp.watch(imgPath + '/**/*', ['images']);
     livereload.listen();
-    gulp.watch(['./js/**/*', './**/*.php', 'style.css']).on('change', livereload.changed);
+    gulp.watch(['./js/**/*', './src/images/*', './**/*.php', 'style.css']).on('change', livereload.changed);
 });
 
 
 //  Create a default task
-gulp.task('default', ['styles', 'scripts', 'images', 'watch', 'browser-sync'], null);
+gulp.task('default', ['styles', 'scripts', 'images', 'watch'], null);
