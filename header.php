@@ -46,7 +46,7 @@
 						#masthead { background: none; }
 						.site-branding {background-color: #000; }
 					</style>
-				<video muted autoplay src="<?= get_template_directory_uri() ?>/video/inverted-silhouette.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/inverted-silhouette-poster.jpg">
+				<video autoplay src="<?= get_template_directory_uri() ?>/video/inverted-silhouette.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/inverted-silhouette-poster.jpg">
 					<source src="<?= get_template_directory_uri() ?>/video/inverted-silhouette.mp4">
 				</video>
 				<?php endif; ?>

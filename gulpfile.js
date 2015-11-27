@@ -37,11 +37,11 @@ gulp.task('styles', function () {
 // Process JS files
 gulp.task('scripts', function () {
     return gulp.src(jsPath + '/**/*.js')
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(concat('main.js'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/js'}))
+        //.pipe(uglify())
+        //.pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/js'}))
         .pipe(gulp.dest('./js'))
         .pipe(livereload())
 });

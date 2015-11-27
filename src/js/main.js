@@ -108,13 +108,54 @@
         /**
          * Display / Hide the search box on larger screens
          */
-        document.getElementById('search-icon-link').onclick = function() {
-            document.getElementById('search-form').style.display = 'block';
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('search-icon-link').onclick = function () {
+                document.getElementById('search-form').style.display = 'block';
+            }
+
+            document.getElementById('search-close').onclick = function () {
+                document.getElementById('search-form').style.display = 'none';
+            }
+        })
+
+
+        /**
+         * Update the height of sponsor banners on home page.
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSponsorBannerHeight();
+        });
+
+        window.addEventListener('resize', function() {
+            updateSponsorBannerHeight();
+        });
+
+        function updateSponsorBannerHeight() {
+            var sliderElements = document.querySelectorAll('.coin-slider > div');
+
+            for(var i = 0; i < sliderElements.length; ++i) {
+                sliderElements[i].style.height = sliderElements[i].offsetWidth * .2238 + 'px';
+            }
         }
 
-        document.getElementById('search-close').onclick = function() {
-            document.getElementById('search-form').style.display = 'none';
-        }
 
+        /**
+         * Easter egg inverted
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            var trigger = document.getElementById('inverted-toggle');
+
+            trigger.addEventListener('click', function() {
+                document.querySelector('body').classList.toggle('inverted');
+                /*
+                var body = document.querySelector('body');
+                var classes = body.className;
+
+                if(classes.indexOf('inverted') === -1) {
+                    body.className('class', classes + ' inverted');
+                }
+                */
+            })
+        });
     }
 )();

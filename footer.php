@@ -14,10 +14,25 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="cols">
+			<div class="subscribe">
+				<a href="https://itunes.apple.com/podcast/rc-heli-nation-v-2.0/id367091559?mt=2" class="button light">Subscribe on iTunes</a>
+				<a href="/rchn-and-android/" class="button light">Subscribe on Android</a>
+			</div>
+			<div class="social">
+				<a href="https://www.facebook.com/RCHNv2/"><i class="fa fa-facebook-square"></i></a>
+				<a href="https://twitter.com/rchelination"><i class="fa fa-twitter-square"></i></a>
+				<a href="https://vimeo.com/rchelination"><i class="fa fa-vimeo-square"></i></a>
+			</div>
+			<div class="misc-buttons">
+				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XWQHMF6J3CQY8" class="button light">Donate via Paypal</a>
+				<a href="http://www.helifreak.com/forumdisplay.php?f=445" class="button light">See us on HeliFreak</a>
+			</div>
+		</div>
 		<div class="site-info">
-			&copy; <?= date('Y') ?> RC Heli Nation LLC
+			<span class="copyright">&copy; <?= date('Y') ?> <span id="inverted-toggle">RC Heli Nation LLC</span></span>
 			<span class="sep"> | </span>
-			Website design by <a href="http://www.superiocity.com/">Superiocity</a>
+			<span class="superiocity-signature">Website design by <a href="http://www.superiocity.com/">Superiocity</a></span>
 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
