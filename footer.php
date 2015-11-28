@@ -32,7 +32,7 @@
 		<div class="site-info">
 			<span class="copyright">&copy; <?= date('Y') ?> <span id="inverted-toggle">RC Heli Nation LLC</span></span>
 			<span class="sep"> | </span>
-			<span class="superiocity-signature">Website design by <a href="http://www.superiocity.com/">Superiocity</a></span>
+			<span class="superiocity-signature">Website made in the USA by <a href="http://www.superiocity.com/">Superiocity</a></span>
 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

@@ -108,6 +108,15 @@ body {
   }
 }
 
+input[type=text], input[type=search], input[type=email] {
+  border-radius: .25em;
+  font-size: 1em;
+  padding: .25em;
+  border: solid 1px #ccc;
+  outline: none;
+  -webkit-appearance: none;
+}
+
 button.menu-toggle {
   transform: none;
 }
@@ -366,7 +375,7 @@ button.menu-toggle {
     padding: 1em;
     width: 25em;
     max-width: 100%;
-    margin: 3em .5em;
+    margin: 1em .5em;
 
     h4 {
       font-size: 1.2em;
@@ -374,9 +383,18 @@ button.menu-toggle {
       color: $color_brand2;
       text-shadow: 1px 1px 1px rgba(0,0,0,.1);
       background: url(images/push-rod.png) no-repeat right bottom;
-      padding-bottom: 6px;
+      padding: 0 0 6px .25em;
+    }
+
+    .date {
+      font-size: .65em;
     }
   }
+}
+
+.home .content-inner a.small {
+  font-size: .75em;
+  float: right;
 }
 
 .citizen .content-inner div {
@@ -397,11 +415,61 @@ button.menu-toggle {
   }
 }
 
-.episodes {
-  .date {
-    font-size: .65em;
+.rchn-gear .content-inner {
+  text-align: center;
+
+  h4 {
+    text-align: left;
+  }
+
+  img {
+    margin-top: 30px;
+  }
+
+  .button {
+    margin-top: 30px;
   }
 }
+
+.newsletter {
+  ul {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 1em;
+  }
+
+  li {
+    list-style-image: url(images/bullet2.png);
+  }
+
+  label {
+    width: 75px;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  input {
+    margin: .25em 0;
+  }
+
+  form {
+    display: block;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .privacy {
+    font-size: .5em;
+    color: #999;
+  }
+}
+
+.episodes {
+  h4 {
+    margin-bottom: 1em;
+  }
+}
+
 
 .site-footer {
   background: #000 url(images/bg-cf.jpg) repeat;
