@@ -42,12 +42,16 @@ get_header(); ?>
 				</div>
 				<div class="rchn-gear content-box">
 					<div class="content-inner">
-						<h4>Buy Awesome RCHN Gear</h4>
+						<h4>Get Awesome RCHN Gear</h4>
+						<a href="/rchn-store/"><img src="<?= get_stylesheet_directory_uri() ?>/images/products.jpg" width="334" height="400" alt="RC Heli Nation Gear"></a>
+						<a href="/rchn-store/" class="button solid">Shop Now!</a>
+
 					</div> <!-- .content-inner -->
 				</div>
 				<div class="newsletter content-box">
 					<div class="content-inner">
 						<h4>Subscribe to the Newsletter</h4>
+						<?php get_template_part('template-parts/content', 'email_subscribe'); ?>
 					</div> <!-- .content-inner -->
 				</div>
 				<div class="episodes content-box">
@@ -58,18 +62,19 @@ get_header(); ?>
 							$pp_data = powerpress_get_enclosure_data( $episodes[0]['ID'] );
 							//print_r( $pp_data );
 
-							$query_args = array (
+							$episodesQueryArgs = array(
 								'posts_per_page' => 5,
-								'category'       => 'episodes',
+								'category_name'  => 'episodes',
 								'post_status'    => 'publish',
 							);
 
-							$episodesQuery = new WP_Query( $query_args );
+							$episodesQuery = new WP_Query( $episodesQueryArgs );
 
-							while( $episodesQuery->have_posts() ): $episodesQuery->the_post(); ?>
+							while ( $episodesQuery->have_posts() ) : $episodesQuery->the_post(); ?>
 								<li><a href="<?php the_permalink() ?>"><?= str_replace( 'RCHN V 2.0 ', '',  the_title( null, null, false ) ); ?></a> <span class="date"><?php the_date( 'm/d/y' ); ?></span> </li>
-							<?php endwhile; ?>
+							<?php endwhile; wp_reset_postdata(); ?>
 						</ul>
+						<a href="/tag/RCHN/" class="small">see all episodes &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .episodes -->
 			</div> <!-- .container-center -->
@@ -83,11 +88,41 @@ get_header(); ?>
 				<div class="reviews content-box">
 					<div class="content-inner">
 						<h4>Latest Reviews</h4>
+						<ul>
+							<?php
+							$query_args = array (
+								'posts_per_page' => 5,
+								'tag'            => 'review',
+								'post_status'    => 'publish',
+							);
+
+							$reviewsQuery = new WP_Query( $query_args );
+
+							while( $reviewsQuery->have_posts() ): $reviewsQuery->the_post(); ?>
+								<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+							<?php endwhile; wp_reset_postdata(); ?>
+						</ul>
+						<a href="/tag/review/" class="small">see all reviews &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .reviews -->
 				<div class="tech-tips content-box">
 					<div class="content-inner">
 						<h4>Latest Tech Tips</h4>
+						<ul>
+							<?php
+							$techTipQueryArgs = array (
+								'posts_per_page' => 5,
+								'category_name'  => 'tech-tips',
+								'post_status'    => 'publish',
+							);
+
+							$techTipQuery = new WP_Query( $techTipQueryArgs );
+
+							while( $techTipQuery->have_posts() ): $techTipQuery->the_post(); ?>
+								<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+							<?php endwhile; ?>
+						</ul>
+						<a href="/tag/review/" class="small">see all tech tips &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .tech-tips -->
 				<div class="events content-box">
