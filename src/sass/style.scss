@@ -395,6 +395,7 @@ button.menu-toggle {
 .home .content-inner a.small {
   font-size: .75em;
   float: right;
+  font-weight: normal;
 }
 
 .citizen .content-inner div {
@@ -470,7 +471,37 @@ button.menu-toggle {
   }
 }
 
+.home .row .events.content-box {
 
+  h4 {
+    margin-bottom: 1em;
+  }
+
+  .ai1ec-calendar-toolbar,  .ai1ec-btn-group  {
+    display: none;
+  }
+}
+
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.home .row .videos.content-box {
+  h4 {
+    margin-bottom: 1em;
+  }
+}
 .site-footer {
   background: #000 url(images/bg-cf.jpg) repeat;
   font-size: .75rem;

@@ -125,14 +125,20 @@ get_header(); ?>
 						<a href="/tag/review/" class="small">see all tech tips &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .tech-tips -->
-				<div class="events content-box">
-					<div class="content-inner">
-						<h4>Upcoming Events</h4>
-					</div> <!-- .content-inner -->
-				</div> <!-- .events -->
 				<div class="videos content-box">
 					<div class="content-inner">
 						<h4>Latest Videos</h4>
+						<?php echo do_shortcode( '[vimeography id="1"]' ); ?>
+						<br>
+						<a href="/media/rchn-videos/" class="small">see all videos &raquo;</a>
+					</div> <!-- .content-inner -->
+				</div> <!-- .videos-->
+				<div class="events content-box">
+					<div class="content-inner">
+						<h4>Upcoming Events</h4>
+						<?php echo do_shortcode( '[ai1ec events_limit="4" view="agenda"]' ); ?>
+
+					<a href="/calendar/" class="small">see all events &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .events -->
 			</div> <!-- .container-center -->
