@@ -94,3 +94,15 @@ function superiocity_rchn_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'superiocity_rchn_scripts' );
 
+function superiocity_rchn_excerpt( $text ) {
+	$excerpt_length = 55; // words.
+
+	if ( '' === $text ) {
+		return '';
+	}
+
+	$textParts = preg_split( '/[\n\r\t ]+/', strip_tags( $text ), $excerpt_length,  PREG_SPLIT_NO_EMPTY );
+	array_pop( $textParts ); // Get rid of last element.
+	return join( ' ', $textParts );
+}
+

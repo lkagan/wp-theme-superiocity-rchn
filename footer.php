@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="site-info">
-			<span class="copyright">&copy; <?= date('Y') ?> <span id="inverted-toggle">RC Heli Nation LLC</span></span>
+			<span class="copyright">&copy; <?= date( 'Y' ) ?> <span id="inverted-toggle">RC Heli Nation LLC</span></span>
 			<span class="sep"> | </span>
 			<span class="superiocity-signature">Website made in the USA by <a href="http://www.superiocity.com/">Superiocity</a></span>
 
@@ -39,6 +39,5 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

@@ -353,6 +353,25 @@ button.menu-toggle {
 }
 
 
+.home .row .container-center .content-box.player {
+  min-width: 90%;
+  border: solid 2px $color_brand1;
+  border-radius: 1em;
+  background-color: #444;
+  color: #fff;
+
+  h4 {
+    color: $color_brand1;
+  }
+
+  audio {
+    margin: 1em auto;
+    display: block;
+  }
+
+
+}
+
 .home .row .container-center {
   width: 1390px;
   max-width: 95%;
@@ -502,6 +521,7 @@ button.menu-toggle {
     margin-bottom: 1em;
   }
 }
+
 .site-footer {
   background: #000 url(images/bg-cf.jpg) repeat;
   font-size: .75rem;
@@ -560,6 +580,15 @@ button.menu-toggle {
     display: block;
   }
 
+}
+
+
+@media screen and (min-width: 350px) {
+
+  audio {
+    margin: 1em -1em;
+    display: block;
+  }
 }
 
 

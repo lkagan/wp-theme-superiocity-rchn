@@ -20,8 +20,26 @@ get_header(); ?>
 			<?php if (function_exists('vslider')) { vslider('homepage1a'); }?>
 			<?php if (function_exists('vslider')) { vslider('homepage1b'); }?>
 		</div>
+			<?php
+			$episodesQueryArgs = array(
+				'posts_per_page' => 5,
+				'category_name'  => 'episodes',
+				'post_status'    => 'publish',
+			);
+
+			$episodesQuery = new WP_Query( $episodesQueryArgs );
+			$pp_data = powerpress_get_enclosure_data( $episodesQuery->posts[0]->ID );
+			?>
 		<div class="row">
 			<div class="container-center">
+				<div class="content-box player">
+					<h4><?= str_replace( 'RCHN V 2.0 ', '', $episodesQuery->posts[0]->post_title ); ?></h4>
+					<small><?= date('F j, Y', strtotime($episodesQuery->posts[0]->post_date)); ?></small>
+					<p><?= superiocity_rchn_excerpt( $episodesQuery->posts[0]->post_content ); ?></p>
+					<audio controls>
+						<source src="<?= $pp_data['url'] ?>" type="audio/mpeg">
+					</audio>
+				</div>
 				<div class="citizen content-box">
 					<div class="content-inner">
 						<h4>Become a Registered Citizen</h4>
@@ -59,16 +77,6 @@ get_header(); ?>
 						<h4>Latest Episodes</h4>
 						<ul>
 							<?php
-							$pp_data = powerpress_get_enclosure_data( $episodes[0]['ID'] );
-							//print_r( $pp_data );
-
-							$episodesQueryArgs = array(
-								'posts_per_page' => 5,
-								'category_name'  => 'episodes',
-								'post_status'    => 'publish',
-							);
-
-							$episodesQuery = new WP_Query( $episodesQueryArgs );
 
 							while ( $episodesQuery->have_posts() ) : $episodesQuery->the_post(); ?>
 								<li><a href="<?php the_permalink() ?>"><?= str_replace( 'RCHN V 2.0 ', '',  the_title( null, null, false ) ); ?></a> <span class="date"><?php the_date( 'm/d/y' ); ?></span> </li>
@@ -133,14 +141,30 @@ get_header(); ?>
 						<a href="/media/rchn-videos/" class="small">see all videos &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .videos-->
+
+
+
+
+
+
+
 				<div class="events content-box">
 					<div class="content-inner">
 						<h4>Upcoming Events</h4>
 						<?php echo do_shortcode( '[ai1ec events_limit="4" view="agenda"]' ); ?>
-
-					<a href="/calendar/" class="small">see all events &raquo;</a>
+						<a href="/calendar/" class="small">see all events &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .events -->
+
+
+
+
+
+
+
+
+
+
 			</div> <!-- .container-center -->
 		</div> <!-- .row -->
 		<div class="row sponsor">
