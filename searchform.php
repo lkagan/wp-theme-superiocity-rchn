@@ -4,14 +4,13 @@
 		<i class="fa fa-close" id="search-close"></i>
 	</div>
 	<input type="search..." name="s" value="<?php the_search_query(); ?>" placeholder="search" />
-	<!-- Look into $wp_query object for all possible variables of this hidden field -->
 	<input type="hidden" value="post" name="post_type" id="post_type" />
-	<select name="category_name">
+	<input type="hidden" name="" value="" id="selected_value">
+	<select name="search_value" id="search_value">
 		<option value="">entire site</option>
-		<option>episodes</option>
-		<option>diggin' in</option>
-		<option>reviews</option>
-		<option>tech tips</option>
+		<option value="RCHN">episodes</option>
+		<option value="review">reviews</option>
+		<option value="tech-tips">tech tips</option>
 	</select>
 	<input value="Submit" type="submit" class="solid" alt="Search" />
 </form>
