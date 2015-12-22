@@ -37,7 +37,7 @@ get_header(); ?>
 					<small><?= date('F j, Y', strtotime($episodesQuery->posts[0]->post_date)); ?></small>
 					<p><?= superiocity_rchn_excerpt( $episodesQuery->posts[0]->post_content ); ?></p>
 					<audio controls>
-						<source src="<?= $pp_data['url'] ?>" type="audio/mpeg">
+						<source src="<?= str_replace(array('www.rchelination.dev', 'rchelination.superiocity.com'), 'www.rchelination.com', $pp_data['url']) ?>" type="audio/mpeg">
 					</audio>
 				</div>
 				<div class="citizen content-box">
