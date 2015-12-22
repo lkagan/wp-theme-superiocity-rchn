@@ -365,7 +365,7 @@ button.menu-toggle {
   }
 
   audio {
-    margin: 1em auto;
+    margin: 1em -.5em;
     display: block;
   }
 
@@ -585,8 +585,8 @@ button.menu-toggle {
 
 @media screen and (min-width: 350px) {
 
-  audio {
-    margin: 1em -1em;
+  .home .row .container-center .content-box.player audio {
+    margin: 1em auto;
     display: block;
   }
 }
