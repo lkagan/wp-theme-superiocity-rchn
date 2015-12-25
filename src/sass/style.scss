@@ -299,13 +299,6 @@ button.menu-toggle {
   }
 
   video {
-    /*
-    filter:
-            //blur(4px)
-            //brightness(0.7)
-            //sepia(100%)
-            ;
-            */
     min-width: 100%;
     min-height: 100%;
     position: relative;
@@ -749,10 +742,19 @@ button.menu-toggle {
   }
 
   .tagline-buttons {
-    top: 30%;
+    font-size: .75em;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1em;
+    background-color: rgba(0,0,0,.7);
+    display: inline-block;
+    margin: 0 auto;
+    width: 65%;
+    border-radius: 1em;
 
 
     h3 {
+      margin-top: 0;
       font-size: 1.4em;
     }
   }
