@@ -666,6 +666,10 @@ button.menu-toggle {
       }
     }
 
+    .menu-item-has-children a:hover {
+        transform: none;
+    }
+
     .menu-toggle {
       display: none;
     }
@@ -685,6 +689,37 @@ button.menu-toggle {
 
       .sub-menu {
         display: none;
+      }
+
+      li:hover {
+
+        .sub-menu {
+          display: inline-block;
+          position: absolute;
+          background: #000 url(images/bg-cf.jpg) repeat;
+          border: 1px solid rgba(128,128,128,.8);
+          box-shadow: 0 0 8px 5px rgba(0,0,0,.5);
+          color: #fff;
+          padding: .8em;
+          z-index: 30;
+          margin-top: 0;
+
+          li {
+            display: block;
+            border-bottom: solid 1px gray;
+            list-style: none;
+            white-space: nowrap;
+            font-family: Play,verdana,sans-serif;
+            font-size: .8em;
+            line-height: 2.2em;
+            text-align: left;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+        }
       }
 
       #search-icon-link {
