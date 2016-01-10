@@ -15,23 +15,22 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="cols">
-			<div class="subscribe">
-				<a href="" class="button light">Become a Registered Citizen</a>
+			<div class="misc-buttons">
+				<?php if( ! is_front_page() ): ?>
+				<a href="/rchn-citizen-registration/" class="button light">Become a Registered Citizen</a>
+				<a href="/nation-newsletter/" class="button light">Sign up for the RCHN Newsletter</a>
+				<a href="/rchn-store/" class="button light">Shop Awesome RCHN Gear</a>
+				<?php endif; ?>
 				<a href="https://itunes.apple.com/podcast/rc-heli-nation-v-2.0/id367091559?mt=2" class="button light">Subscribe on iTunes</a>
 				<a href="/rchn-and-android/" class="button light">Subscribe on Android</a>
-			</div>
-			<div class="social">
-				<a href="https://www.facebook.com/RCHNv2/"><i class="fa fa-facebook-square"></i></a>
-				<a href="https://twitter.com/rchelination"><i class="fa fa-twitter-square"></i></a>
-				<a href="https://vimeo.com/rchelination"><i class="fa fa-vimeo-square"></i></a>
-				<br>
-				<a href="" class="button light">Sign up for the RCHN Newsletter</a>
-			</div>
-			<div class="misc-buttons">
-				<a href="" class="button light">Shop Awesome RCHN Gear</a>
 				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XWQHMF6J3CQY8" class="button light">Donate via Paypal</a>
 				<a href="http://www.helifreak.com/forumdisplay.php?f=445" class="button light">See us on HeliFreak</a>
 			</div>
+		</div>
+		<div class="social">
+			<a href="https://www.facebook.com/RCHNv2/"><i class="fa fa-facebook-square"></i></a>
+			<a href="https://twitter.com/rchelination"><i class="fa fa-twitter-square"></i></a>
+			<a href="https://vimeo.com/rchelination"><i class="fa fa-vimeo-square"></i></a>
 		</div>
 		<div class="site-info">
 			<span class="copyright">&copy; <?= date( 'Y' ) ?> <span id="inverted-toggle">RC Heli Nation LLC</span></span>
