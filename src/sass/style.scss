@@ -36,7 +36,7 @@ $font-normal:  arial, helvetica, sans-serif;
   box-sizing: border-box;
 }
 
-body, ul {
+body, ul, p {
   margin: 0;
   padding: 0;
 }
@@ -524,6 +524,10 @@ button.menu-toggle {
   box-shadow: 1px -4px 10px rgba(0,0,0,.3);
   padding-bottom: 1em;
 
+  .button {
+    font-size: .75rem;
+  }
+
   a{
     color: #fff;
   }
@@ -538,6 +542,7 @@ button.menu-toggle {
   }
 
   .social {
+    order: 1;
     font-size: 3rem;
     margin: 1rem;
 
@@ -586,6 +591,12 @@ button.menu-toggle {
 
 
 @media screen and (min-width: 600px) {
+
+  #content {
+    background: #fff url(images/microphone-bw.png) no-repeat 100% 150px;
+    background-attachment: fixed;
+    background-size: auto calc(100vh - 150px);
+  }
 
   .tagline-buttons {
     .button {
