@@ -36,7 +36,7 @@ $font-normal:  arial, helvetica, sans-serif;
   box-sizing: border-box;
 }
 
-body, ul {
+body, ul, p {
   margin: 0;
   padding: 0;
 }
@@ -524,21 +524,22 @@ button.menu-toggle {
   box-shadow: 1px -4px 10px rgba(0,0,0,.3);
   padding-bottom: 1em;
 
+  .button {
+    font-size: .75rem;
+    margin: 1em;
+  }
+
   a{
     color: #fff;
   }
 
   .button {
-    max-width: 45%;
     width: 200px;
   }
 
-  .subscribe, .misc-buttons, .social {
-    margin: 1rem 0;
-  }
-
   .social {
-    font-size: 3rem;
+    order: 1;
+    font-size: 2rem;
     margin: 1rem;
 
     a {
@@ -587,6 +588,12 @@ button.menu-toggle {
 
 @media screen and (min-width: 600px) {
 
+  #content {
+    background: #fff url(images/microphone-bw.png) no-repeat 100% 150px;
+    background-attachment: fixed;
+    background-size: auto calc(100vh - 150px);
+  }
+
   .tagline-buttons {
     .button {
       font-size: 1em;
@@ -615,10 +622,6 @@ button.menu-toggle {
 
     .copyright, .superiocity-signature {
       display: inline-block;
-    }
-
-    .button {
-      margin: 1em;
     }
   }
 }
@@ -666,6 +669,10 @@ button.menu-toggle {
       }
     }
 
+    .menu-item-has-children a:hover {
+        transform: none;
+    }
+
     .menu-toggle {
       display: none;
     }
@@ -685,6 +692,37 @@ button.menu-toggle {
 
       .sub-menu {
         display: none;
+      }
+
+      li:hover {
+
+        .sub-menu {
+          display: inline-block;
+          position: absolute;
+          background: #000 url(images/bg-cf.jpg) repeat;
+          border: 1px solid rgba(128,128,128,.8);
+          box-shadow: 0 0 8px 5px rgba(0,0,0,.5);
+          color: #fff;
+          padding: .8em;
+          z-index: 30;
+          margin-top: 0;
+
+          li {
+            display: block;
+            border-bottom: solid 1px gray;
+            list-style: none;
+            white-space: nowrap;
+            font-family: Play,verdana,sans-serif;
+            font-size: .8em;
+            line-height: 2.2em;
+            text-align: left;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+        }
       }
 
       #search-icon-link {

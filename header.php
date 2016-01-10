@@ -19,7 +19,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( is_front_page() ? 'home' : 'inner' ); ?>>
 <div id="page" class="hfeed">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
