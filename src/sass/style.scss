@@ -526,6 +526,7 @@ button.menu-toggle {
 
   .button {
     font-size: .75rem;
+    margin: 1em;
   }
 
   a{
@@ -533,17 +534,12 @@ button.menu-toggle {
   }
 
   .button {
-    max-width: 45%;
     width: 200px;
-  }
-
-  .subscribe, .misc-buttons, .social {
-    margin: 1rem 0;
   }
 
   .social {
     order: 1;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 1rem;
 
     a {
@@ -626,10 +622,6 @@ button.menu-toggle {
 
     .copyright, .superiocity-signature {
       display: inline-block;
-    }
-
-    .button {
-      margin: 1em;
     }
   }
 }
