@@ -31,7 +31,6 @@ gulp.task('styles', function () {
         .pipe(minifycss())
         .pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/sass'}))
         .pipe(gulp.dest('.'))
-        .pipe(livereload())
 });
 
 // Process JS files

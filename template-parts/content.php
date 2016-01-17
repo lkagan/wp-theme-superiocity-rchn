@@ -11,6 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<div class="date-badge"><?php the_date( 'M d' ); ?></div>
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -19,20 +20,15 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'superiocity_rchn' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+		<?php if ( has_post_thumbnail() ): ?>
+			<div class="image">
+				<a href="<?php echo the_permalink() ?>">
+					<?php the_post_thumbnail( 'medium' ) ?>
+				</a>
+			</div>
+		<?php endif; ?>
 
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'superiocity_rchn' ),
-				'after'  => '</div>',
-			) );
-		?>
+		<div class="excerpt"><?php the_excerpt(); ?></div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
