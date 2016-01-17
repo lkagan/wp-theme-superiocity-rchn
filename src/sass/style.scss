@@ -22,18 +22,32 @@ Text Domain: superiocity_rchn
   }
 }
 
+@mixin article {
+  background-color: #fff;
+  box-shadow: $card-shadow;
+  padding: .25em 1em 1em 1em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+
 /* Variables */
 $color__text-screen-dark: #ddd;
 $color_brand1: #D87F18;
-$color_brand2: #cb6100;
+$color_brand2: #D25100;
 $font-fancy: Play, verdana, sans-serif;
 $font-normal:  arial, helvetica, sans-serif;
+$card-shadow:  1px 1px 4px 1px rgba(0, 0, 0, .3);
 
 
 
 /* Reset */
 * {
   box-sizing: border-box;
+}
+
+body {
+  background: #eee url(images/bg-diamond-plate-light.jpg) repeat;
 }
 
 body, ul, p {
@@ -52,6 +66,19 @@ img {
 
 a, a:hover, a:active, a:visited {
   color: $color_brand2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.home li a {
+  text-decoration: underline;
+}
+
+.superiocity-signature a {
+  text-decoration: underline;
 }
 
 /* Fonts */
@@ -396,8 +423,10 @@ button.menu-toggle {
       margin: 0;
       color: $color_brand2;
       text-shadow: 1px 1px 1px rgba(0,0,0,.1);
-      background: url(images/push-rod.png) no-repeat right bottom;
-      padding: 0 0 6px .25em;
+      background: url(images/push-rod.png) left bottom no-repeat;
+      padding: 0 0em 8px 0em;
+      text-align: center;
+      width: 100%;
     }
 
     .date {
@@ -588,6 +617,107 @@ button.menu-toggle {
   margin-top: 0;
 }
 
+article.type-post {
+  margin-top: 2em;
+  @include article;
+
+  p {
+    margin: 1em;
+  }
+
+  img {
+    border-radius: 1em;
+    border: solid 1px #ccc;
+  }
+}
+
+/* tag: rchn = episides */
+.tag-rchn, .tag-review {
+
+  article {
+    @include article;
+  }
+
+  .excerpt {
+    flex: 1 1;
+  }
+
+  .date-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5em 1em;
+    background-color: #666;
+    color: #eee;
+    border-radius: 0 1em 0 1em;
+    font-size: .75em;
+  }
+}
+
+.tag-rchn {
+
+  .wp-post-image {
+    border-radius: 1em;
+    box-shadow: $card-shadow;
+  }
+
+  &.archive .entry-content .date {
+    color: #ddd;
+    font-size: 1rem;
+    padding: .5em;
+    display: inline-block;
+    border-top-left-radius: 1em;
+    position: absolute;
+    font-family: $font-fancy;
+  }
+}
+
+
+.archive.tag-review  {
+
+  .image {
+    margin: 0 auto;
+    text-align: left;
+    display: block;
+
+    img {
+      border: solid 1px #ccc;
+      border-radius: 1em;
+    }
+  }
+
+  .entry-content .date {
+    text-align: right;
+    background: #444;
+    color: #ddd;
+    font-size: 1rem;
+    padding: .5em 1em .5em .5em;
+    display: block;
+    border-radius: 0;
+    font-family: $font-fancy;
+    position: relative;
+  }
+}
+
+
+.archive .entry-content .image {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.inner h2 a {
+  color: $color_brand2;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+  background: url(images/push-rod.png) left bottom no-repeat;
+  padding: 0 0 8px .5em;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.more-link {
+  white-space: nowrap;
+}
 
 @media screen and (min-width: 350px) {
 
@@ -599,12 +729,6 @@ button.menu-toggle {
 
 
 @media screen and (min-width: 600px) {
-
-  .inner #page {
-    background: #fff url(images/microphone-bw.jpg) no-repeat 100% 150px;
-    background-attachment: fixed;
-    background-size: auto calc(100vh - 150px);
-  }
 
   .tagline-buttons {
     .button {
@@ -618,8 +742,9 @@ button.menu-toggle {
     .content-box {
       transform: skewX(-7deg);
       padding: 2em 3em;
+      border-radius: 1em;
 
-      .content-inner {
+      .content-inner      {
         transform: skewX(7deg);
       }
     }
@@ -639,9 +764,20 @@ button.menu-toggle {
 }
 
 
-@media screen and (min-width: 800px) {
-  .site-footer {
+@media screen and (min-width: 700px) {
+  .archive .entry-content {
+    display: flex;
 
+    .image {
+      flex-shrink: 0;
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  .site-footer {
     .social {
       flex-shrink: 0;
     }
@@ -669,16 +805,34 @@ button.menu-toggle {
 
 @media screen and (min-width: 1000px) {
 
+  .archive, .single  {
+
+    .site-content {
+      display: flex;
+      flex-wrap: nowrap;
+
+      #primary {
+        padding-right: 3rem;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+
+      #secondary {
+        flex-grow: 0;
+        flex-shrink: 1;
+        max-width: 200px;
+      }
+    }
+  }
+
   .main-navigation {
     position: relative;
     display: inline-block;
     margin: 0 0 0 1em;
 
-    a, a:visited, a:active {
-      &:hover {
+    a:hover {
         transform: rotate(720deg);
         transition: transform .5s;
-      }
     }
 
     .menu-item-has-children a:hover {

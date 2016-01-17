@@ -106,3 +106,10 @@ function superiocity_rchn_excerpt( $text ) {
 	return join( ' ', $textParts );
 }
 
+
+function superiocity_read_more() {
+	return '... <a class="more-link" href="' . get_permalink() . '">more &raquo;</a>';
+}
+
+add_filter( 'excerpt_more', 'superiocity_read_more' );
+
