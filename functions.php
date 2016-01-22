@@ -103,7 +103,8 @@ function superiocity_rchn_excerpt( $text ) {
 
 	$textParts = preg_split( '/[\n\r\t ]+/', strip_tags( $text ), $excerpt_length,  PREG_SPLIT_NO_EMPTY );
 	array_pop( $textParts ); // Get rid of last element.
-	return join( ' ', $textParts );
+	$text = join( ' ', $textParts );
+	return $text;
 }
 
 

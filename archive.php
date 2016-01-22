@@ -26,6 +26,12 @@ get_header(); ?>
 							case 'Tag: Review':
 								$the_title = 'Reviews';
 								break;
+							case 'Category: Tech Tips':
+								$the_title = 'Tech Tips';
+								break;
+							case 'Tag: digginin':
+								$the_title = 'Diggin\' In';
+								break;
 						}
 						?>
 						<?php echo esc_html( $the_title ); ?>
@@ -47,7 +53,9 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php echo paginate_links( ); ?>
+				<div class="pagination">
+					<?php echo paginate_links( array( 'prev_text' => '&laquo;', 'next_text' => '&raquo;' ) ); ?>
+				</div>
 
 			<?php else : ?>
 

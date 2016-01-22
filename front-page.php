@@ -29,17 +29,20 @@ get_header(); ?>
 
 			$episodesQuery = new WP_Query( $episodesQueryArgs );
 			$pp_data = powerpress_get_enclosure_data( $episodesQuery->posts[0]->ID );
+			$permalink = get_permalink( $episodesQuery->posts[0]->ID );
 			?>
 		<div class="row">
+			<div class="content-box player">
+				<h4><a href="<?php echo $permalink ?>"><i class="fa fa-volume-up"></i> <?= str_replace( 'RCHN V 2.0 ', '', $episodesQuery->posts[0]->post_title ); ?></a></h4>
+				<div class="date-badge"><?= date('M j, Y', strtotime($episodesQuery->posts[0]->post_date)); ?></div>
+				<p><?= superiocity_rchn_excerpt( $episodesQuery->posts[0]->post_content ); ?>
+					... <a class="more-link" href="<?php echo $permalink ?>">more &raquo;</a>
+				</p>
+				<audio controls>
+					<source src="<?= str_replace(array('www.rchelination.dev', 'rchelination.superiocity.com'), 'www.rchelination.com', $pp_data['url']) ?>" type="audio/mpeg">
+				</audio>
+			</div>
 			<div class="container-center">
-				<div class="content-box player">
-					<h4><?= str_replace( 'RCHN V 2.0 ', '', $episodesQuery->posts[0]->post_title ); ?></h4>
-					<small><?= date('F j, Y', strtotime($episodesQuery->posts[0]->post_date)); ?></small>
-					<p><?= superiocity_rchn_excerpt( $episodesQuery->posts[0]->post_content ); ?></p>
-					<audio controls>
-						<source src="<?= str_replace(array('www.rchelination.dev', 'rchelination.superiocity.com'), 'www.rchelination.com', $pp_data['url']) ?>" type="audio/mpeg">
-					</audio>
-				</div>
 				<div class="citizen content-box">
 					<div class="content-inner">
 						<h4>Become a Registered Citizen</h4>
