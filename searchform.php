@@ -3,7 +3,7 @@
 		<h4>Search</h4>
 		<i class="fa fa-close" id="search-close"></i>
 	</div>
-	<input type="search..." name="s" value="<?php the_search_query(); ?>" placeholder="search" />
+	<input type="search" name="s" value="<?php the_search_query(); ?>" placeholder="search..." />
 	<input type="hidden" value="post" name="post_type" id="post_type" />
 	<input type="hidden" name="" value="" id="selected_value">
 	<select name="search_value" id="search_value">

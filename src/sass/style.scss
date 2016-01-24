@@ -49,6 +49,7 @@ body {
   background: #eee url(images/bg-diamond-plate-light.jpg) repeat;
 }
 
+
 body, ul, p {
   margin: 0;
   padding: 0;
@@ -82,6 +83,16 @@ a:hover {
 
 .superiocity-signature a {
   text-decoration: underline;
+}
+
+#page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  .site-content {
+    flex-grow: 1;
+  }
 }
 
 /* Fonts */
@@ -129,6 +140,7 @@ p {
 
   &.solid:hover {
     background-image: linear-gradient(lighten($color_brand2, 20%), $color_brand2);
+    text-decoration: none;
     transform: none;
   }
 
@@ -140,6 +152,7 @@ p {
     cursor: pointer;
     transform: scale(1.1);
     transition: transform .2s;
+    text-decoration: none;
   }
 }
 
@@ -223,6 +236,12 @@ button.menu-toggle {
   top: 0;
   right: 0;
 
+  input[type=search], select {
+    border-radius: .5em;
+    padding: .25em;
+    font-size: .75em;
+  }
+
   button {
     background-image: linear-gradient(to bottom, #666, #000);
     outline: none;
@@ -283,7 +302,7 @@ button.menu-toggle {
       }
     }
 
-    li.current-menu-item a {
+    li.current-menu-item > a, .current-page-ancestor > a {
       color: $color_brand1;
     }
 
@@ -617,8 +636,13 @@ button.menu-toggle {
     margin: 1em;
   }
 
-  a{
+  a {
     color: #fff;
+    text-decoration: underline;
+
+    &.button {
+      text-decoration: none;
+    }
   }
 
   .button {
@@ -697,13 +721,21 @@ button.menu-toggle {
   }
 }
 
-/* tag: rchn = episides */
 .archive {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .posts-per-page {
+    align-self: flex-end;
+    padding-bottom: 1em;
+  }
 
   article {
     @include article;
   }
-
 
   .excerpt {
     flex: 1 1;
@@ -728,6 +760,11 @@ button.menu-toggle {
   .wp-post-image {
     border-radius: 1em;
     box-shadow: $card-shadow;
+    transition: transform .25s;
+  }
+
+  .wp-post-image:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -803,8 +840,25 @@ a.page-numbers:hover {
   color: $color_brand2;
 }
 
+.comment {
+  position: relative;
+}
+
 .comment-list {
   padding: 0;
+
+  ol.children {
+    padding: 0;
+
+    time {
+      position: relative;
+      padding: 0;
+      color: #000;
+      font-size: .75em;
+      font-weight: bold;
+      background: none;
+    }
+  }
 }
 
 .comment.depth-1, .pingback {
@@ -836,6 +890,20 @@ a.page-numbers:hover {
   }
 }
 
+.comment-form-comment {
+  margin: 1em 0;
+  label {
+    display: block;
+  }
+
+  textarea {
+    border-radius: 1em;
+    outline: none;
+    border: solid 1px #ccc;
+    width: 100%;
+  }
+}
+
 .post-3465, .inner .entry-content {
   h2 a {
     background: none !important;
@@ -843,12 +911,92 @@ a.page-numbers:hover {
 }
 
 
+.rchn label {
+  display: inline-block;
+  width: 180px;
+}
+
+.rchn label.required {
+  font-weight: bold;
+}
+
+.rchn legend {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.rchn input[type=text], .rchn input[type=email] {
+  width: 200px;
+  margin-bottom: 4px;
+}
+
+.rchn.confirm form {
+  display: inline;
+  margin-top: 20px;
+  vertical-align: middle;
+}
+
+.rchn .buttons {
+  margin-top: 20px;
+}
+
+.rchn .error {
+  font-weight: bold;
+  color: #a00;
+  margin-left: 20px;
+}
+
+.rchn .tipable.help-icon {
+  color: #666;
+  font-weight: normal;
+}
+
+.rchn.confirm .buttons .paypal {
+  top: 8px;
+  position: relative;
+  padding-right: 20px;
+}
+
+.rchn.confirm a {
+  float: right;
+}
+
+.rchn.resident-form fieldset legend, .rchn.confirm fieldset legend {
+  background-color: #fff;
+  border: solid 1px #ccc;
+  border-radius: 1em;
+  padding: 3px 8px;
+}
+
+.rchn.resident-form fieldset, .rchn.confirm fieldset {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 1em;
+  border: none;
+  padding: 1em;
+  display: inline-block;
+  box-shadow: $card-shadow;
+}
+
+.widget-area {
+  margin-top: 4em;
+
+  ol, ul {
+    padding-left: 1em;
+  }
+
+  li {
+    font-size: 1.2em;
+    list-style-image: url(images/bullet2.png);
+    padding: .25em 0;
+  }
+}
+
 @media screen and (min-width: 350px) {
 
-  .home .row .container-center .content-box.player audio {
+  .home .row  .content-box.player audio {
     margin: 1em auto;
-    display: block;
   }
+
 }
 
 
@@ -887,6 +1035,13 @@ a.page-numbers:hover {
 
     .copyright, .superiocity-signature {
       display: inline-block;
+    }
+  }
+
+
+  .comment-list {
+    ol.children {
+      padding-left: 1em;
     }
   }
 }
@@ -959,6 +1114,19 @@ a.page-numbers:hover {
         flex: 0 0 auto;
         width: 200px;
       }
+    }
+  }
+
+  .widget-area {
+    ol, ul {
+      padding-left: 0em;
+    }
+
+    li {
+      font-size: 1em;
+      list-style: none;
+      padding: .5em 0;
+      font-weight: bold;
     }
   }
 
