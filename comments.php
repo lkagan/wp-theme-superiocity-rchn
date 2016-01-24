@@ -69,6 +69,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'superiocity_rchn' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form( array( 'title_reply' => 'Leave a comment' ) ); ?>
 
 </div><!-- #comments -->

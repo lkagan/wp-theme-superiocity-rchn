@@ -36,6 +36,9 @@ get_header(); ?>
 						?>
 						<?php echo esc_html( $the_title ); ?>
 					</h1>
+					<div class="posts-per-page">
+						<?php echo do_shortcode('[user_posts_per_page]'); ?>
+					</div>
 				</header><!-- .page-header -->
 
 				<?php /* Start the Loop */ ?>

@@ -33,6 +33,8 @@
 			<a href="https://vimeo.com/rchelination"><i class="fa fa-vimeo-square"></i></a>
 		</div>
 		<div class="site-info">
+			<a href="/sitemap/">Sitemap</a>
+			<span class="sep"> | </span>
 			<span class="copyright">&copy; <?= date( 'Y' ) ?> <span id="inverted-toggle">RC Heli Nation LLC</span></span>
 			<span class="sep"> | </span>
 			<span class="superiocity-signature">Website by <a href="http://www.superiocity.com/">Superiocity</a></span>
@@ -42,5 +44,17 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<!-- Google analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-2072906-21', 'auto');
+	ga('send', 'pageview');
+
+</script>
+<!-- END Google Analytics -->
 </body>
 </html>
