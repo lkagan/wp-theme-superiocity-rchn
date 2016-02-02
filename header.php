@@ -38,7 +38,7 @@
 			<div class="tagline-buttons">
 				<h3><?php bloginfo( 'description' ) ?></h3>
 				<a href="https://itunes.apple.com/podcast/rc-heli-nation-v-2.0/id367091559?mt=2" class="button light">Subscribe on iTunes</a>
-				<a href="/rchn-and-android/" class="button light">Subscribe on Android</a>
+				<a href="http://subscribeonandroid.com/www.rchelination.com/feed/podcast/" class="button light">Subscribe on Android</a>
 			</div>
 			<div class="vignette">
 				<?php if ( ! wp_is_mobile() ): ?>
@@ -46,8 +46,8 @@
 						#masthead { background: none; }
 						.site-branding {background-color: #000; }
 					</style>
-				<video autoplay src="<?= get_template_directory_uri() ?>/video/inverted-silhouette3.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/inverted-silhouette-poster.jpg">
-					<source src="<?= get_template_directory_uri() ?>/video/inverted-silhouette.mp4">
+				<video loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/rchn-cover-poster.jpg">
+					<source src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4">
 				</video>
 				<?php endif; ?>
 			</div>
