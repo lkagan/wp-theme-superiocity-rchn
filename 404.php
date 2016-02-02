@@ -14,28 +14,18 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'superiocity_rchn' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops, something went wrong!', 'superiocity_rchn' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'superiocity_rchn' ); ?></p>
-
-					<?php get_search_form(); ?>
-
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'superiocity_rchn' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
+					<p><?php esc_html_e( 'Nothing can be found at this address. Try the menu or a search.', 'superiocity_rchn' ); ?></p>
+					<br>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/justin-crash.jpg" class="image-card">
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
