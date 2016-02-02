@@ -32,7 +32,10 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<br>
+			<div class="pagination">
+				<?php echo paginate_links( array( 'prev_text' => '&laquo;', 'next_text' => '&raquo;' ) ); ?>
+			</div>
 
 		<?php else : ?>
 

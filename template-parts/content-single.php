@@ -17,6 +17,14 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php if ( has_post_thumbnail() && has_tag( array( 'rchn', 'digginin' ) ) ): ?>
+			<div class="image featured-image">
+				<?php the_post_thumbnail( 'large' ) ?>
+			</div>
+		<?php endif; ?>
+		<?php if ( has_tag( 'rchn' ) ): ?>
+			<?php echo do_shortcode( '[powerpress]' ); ?>
+		<?php endif; ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

@@ -18,11 +18,11 @@
 			<div class="misc-buttons">
 				<?php if( ! is_front_page() ): ?>
 				<a href="/rchn-citizen-registration/" class="button light">Become a Registered Citizen</a>
-				<a href="/nation-newsletter/" class="button light">Sign up for the RCHN Newsletter</a>
+				<a href="/nation-newsletter/" class="button light">Sign up for the Newsletter</a>
 				<a href="/rchn-store/" class="button light">Shop Awesome RCHN Gear</a>
 				<?php endif; ?>
 				<a href="https://itunes.apple.com/podcast/rc-heli-nation-v-2.0/id367091559?mt=2" class="button light">Subscribe on iTunes</a>
-				<a href="/rchn-and-android/" class="button light">Subscribe on Android</a>
+				<a href="http://subscribeonandroid.com/www.rchelination.com/feed/podcast/" class="button light">Subscribe on Android</a>
 				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XWQHMF6J3CQY8" class="button light">Donate via Paypal</a>
 				<a href="http://www.helifreak.com/forumdisplay.php?f=445" class="button light">See us on HeliFreak</a>
 			</div>
