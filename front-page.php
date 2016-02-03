@@ -161,7 +161,7 @@ get_header(); ?>
 								</li>
 							<?php endwhile; ?>
 						</ul>
-						<a href="/tag/review/" class="small">see all tech tips &raquo;</a>
+						<a href="/tech-tips/" class="small">see all tech tips &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .tech-tips -->
 				<div class="videos content-box">
