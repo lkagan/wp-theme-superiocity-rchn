@@ -34,7 +34,6 @@ $card-shadow:  1px 1px 4px 1px rgba(0,0,0,.2);
   background-color: #fff;
   box-shadow: $card-shadow;
   padding: .25em 1em 1em 1em;
-  border-radius: 1em;
   margin-bottom: 2em;
   position: relative;
 }
@@ -128,7 +127,6 @@ li {
 .button, button, input[type=submit] {
   -webkit-appearance: none;
   border: solid 1px #000;
-  border-radius: .25em;
   padding: .5em 1em;
   white-space: nowrap;
   text-decoration: none;
@@ -426,11 +424,9 @@ button.menu-toggle {
 
 .home .row  .content-box.player {
   border: solid 2px $color_brand1;
-  border-radius: 1em;
   background-color: rgba(128,128,128, .5);
   color: #fff;
   padding: 2em 2em;
-  border-radius: 1em;
   width: 1390px;
   max-width: 95%;
   margin: 0 auto 1em auto;
@@ -507,12 +503,41 @@ button.menu-toggle {
     width: 25em;
     max-width: 100%;
     margin: 1em .5em;
-    border-radius: 1em;
 
 
     .date {
       font-size: .65em;
     }
+  }
+}
+
+.home .icon-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: 100%;
+    font-size: 1em;
+    padding: .5em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    border-radius: .5em;
+    box-shadow: $card-shadow;
+    height: auto;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    transition: transform .25s;
   }
 }
 
@@ -719,7 +744,6 @@ button.menu-toggle {
   padding: .5em 1em;
   background-color: #D25100;
   color: #eee;
-  border-radius: 0 1em;
   font-size: .75em;
 }
 
@@ -741,7 +765,8 @@ button.menu-toggle {
 .tag-rchn, .tag-rchn,
 .archive .tag-digginin, .tag-digginin .featured-image,
 .tag-review,
-.category-tech-tips {
+.category-tech-tips,
+.parent-pageid-52 .entry-content{
   img {
     border-radius: 1em;
     box-shadow: $card-shadow;
@@ -935,7 +960,6 @@ a.page-numbers:hover {
   margin-bottom: 1em;
   list-style: none;
   box-shadow: $card-shadow;
-  border-radius: 1em;
   background-color: #fff;
   padding: 2em;
 
@@ -946,7 +970,6 @@ a.page-numbers:hover {
     padding: .5em 1em;
     background-color: #D25100;
     color: #eee;
-    border-radius: 0 1em;
     font-size: .75em;
   }
 
@@ -966,7 +989,6 @@ a.page-numbers:hover {
   }
 
   textarea {
-    border-radius: 1em;
     outline: none;
     border: solid 1px #ccc;
     width: 100%;
@@ -1120,7 +1142,37 @@ a.page-numbers:hover {
   font-size: .85em;
 }
 
+.store-categories {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .category {
+    text-align: center;
+    margin: 2em;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
 @media screen and (min-width: 350px) {
+
+  .home .icon-list {
+    li {
+      width: 40%;
+      font-size: 1em;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
 
   .home .row  .content-box.player audio {
     margin: 1em auto;
@@ -1172,12 +1224,11 @@ a.page-numbers:hover {
   .home .row .container-center {
 
     .content-box {
-      transform: skewX(-7deg);
+      transform: skewX(-5deg);
       padding: 2em 3em;
-      border-radius: 1em;
 
       .content-inner      {
-        transform: skewX(7deg);
+        transform: skewX(5deg);
       }
     }
   }

@@ -22,7 +22,7 @@ get_header(); ?>
 		</div>
 			<?php
 			$episodesQueryArgs = array(
-				'posts_per_page' => 5,
+				'posts_per_page' => 4,
 				'category_name'  => 'episodes',
 				'post_status'    => 'publish',
 			);
@@ -78,11 +78,21 @@ get_header(); ?>
 				<div class="episodes content-box">
 					<div class="content-inner">
 						<h4>Latest Episodes</h4>
-						<ul>
+						<ul class="icon-list">
 							<?php
 
 							while ( $episodesQuery->have_posts() ) : $episodesQuery->the_post(); ?>
-								<li><a href="<?php the_permalink() ?>"><?= str_replace( 'RCHN V 2.0 ', '',  the_title( null, null, false ) ); ?></a> <span class="date"><?php the_date( 'm/d/y' ); ?></span> </li>
+								<li>
+									<?php if ( has_post_thumbnail() ): ?>
+										<div class="image">
+											<a href="<?php echo the_permalink() ?>">
+												<?php the_post_thumbnail( ) ?>
+											</a>
+										</div>
+									<?php endif; ?>
+									<a href="<?php the_permalink() ?>"><?= preg_replace( '/RCHN V 2\.0 EP[0-9]{1,4}: /', '',  the_title( null, null, false ) ); ?></a>
+									<br><span class="date"><?php the_date( 'm/d/y' ); ?></span>
+								</li>
 							<?php endwhile; wp_reset_postdata(); ?>
 						</ul>
 						<a href="/tag/RCHN/" class="small">see all episodes &raquo;</a>
@@ -99,10 +109,10 @@ get_header(); ?>
 				<div class="reviews content-box">
 					<div class="content-inner">
 						<h4>Latest Reviews</h4>
-						<ul>
+						<ul class="icon-list">
 							<?php
 							$query_args = array (
-								'posts_per_page' => 5,
+								'posts_per_page' => 4,
 								'tag'            => 'review',
 								'post_status'    => 'publish',
 							);
@@ -110,7 +120,16 @@ get_header(); ?>
 							$reviewsQuery = new WP_Query( $query_args );
 
 							while( $reviewsQuery->have_posts() ): $reviewsQuery->the_post(); ?>
-								<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+								<li>
+									<?php if ( has_post_thumbnail() ): ?>
+										<div class="image">
+											<a href="<?php echo the_permalink() ?>">
+												<?php the_post_thumbnail( ) ?>
+											</a>
+										</div>
+									<?php endif; ?>
+									<a href="<?php the_permalink() ?>"><?= the_title(); ?></a>
+								</li>
 							<?php endwhile; wp_reset_postdata(); ?>
 						</ul>
 						<a href="/tag/review/" class="small">see all reviews &raquo;</a>
@@ -119,10 +138,10 @@ get_header(); ?>
 				<div class="tech-tips content-box">
 					<div class="content-inner">
 						<h4>Latest Tech Tips</h4>
-						<ul>
+						<ul class="icon-list">
 							<?php
 							$techTipQueryArgs = array (
-								'posts_per_page' => 5,
+								'posts_per_page' => 4,
 								'category_name'  => 'tech-tips',
 								'post_status'    => 'publish',
 							);
@@ -130,7 +149,16 @@ get_header(); ?>
 							$techTipQuery = new WP_Query( $techTipQueryArgs );
 
 							while( $techTipQuery->have_posts() ): $techTipQuery->the_post(); ?>
-								<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+								<li>
+									<?php if ( has_post_thumbnail() ): ?>
+										<div class="image">
+											<a href="<?php echo the_permalink() ?>">
+												<?php the_post_thumbnail( ) ?>
+											</a>
+										</div>
+									<?php endif; ?>
+									<a href="<?php the_permalink() ?>"><?= the_title(); ?></a>
+								</li>
 							<?php endwhile; ?>
 						</ul>
 						<a href="/tag/review/" class="small">see all tech tips &raquo;</a>
