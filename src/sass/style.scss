@@ -58,12 +58,16 @@ a img {
 }
 
 img {
-  max-width: 100%;
+  max-width: 100% !important;
   height: auto;
 }
 
 table, td {
   border: 0;
+}
+
+table {
+  display: inline-block;
 }
 
 a, a:hover, a:active, a:visited {
@@ -89,7 +93,7 @@ a:hover {
   flex-direction: column;
 
   .site-content {
-    flex-grow: 1;
+    flex: 1 0 auto;
   }
 }
 
@@ -251,6 +255,11 @@ select {
   p {
    margin: 1em;
   }
+}
+
+/* Calendar */
+#post-733 {
+  padding-bottom: 3em;
 }
 
 .page-id-359 .email-buttons a {
@@ -1504,6 +1513,9 @@ a.page-numbers:hover {
     background-color: rgba(0,0,0,.5);
     display: inline-block;
     margin: 0 auto;
+    width: 65%;
+    padding: 2em 0;
+    border-radius: .5em;
 
 
     h3 {

@@ -38,7 +38,7 @@ get_header(); ?>
 				<p><?= superiocity_rchn_excerpt( $episodesQuery->posts[0]->post_content ); ?>
 					... <a class="more-link" href="<?php echo $permalink ?>">more &raquo;</a>
 				</p>
-				<audio controls>
+				<audio controls preload="none">
 					<source src="<?= str_replace(array('www.rchelination.dev', 'rchelination.superiocity.com'), 'www.rchelination.com', $pp_data['url']) ?>" type="audio/mpeg">
 				</audio>
 			</div>
@@ -66,16 +66,15 @@ get_header(); ?>
 						<h4>Get Awesome RCHN Gear</h4>
 						<a href="/rchn-store/"><img src="<?= get_stylesheet_directory_uri() ?>/images/products.jpg" width="334" height="400" alt="RC Heli Nation Gear"></a>
 						<a href="/rchn-store/" class="button solid">Shop Now!</a>
-
 					</div> <!-- .content-inner -->
 				</div>
 				<div class="newsletter content-box">
+					<a name="newsletter"></a>
 					<div class="content-inner">
 						<h4>Subscribe to the Newsletter</h4>
 						<?php get_template_part('template-parts/content', 'email_subscribe'); ?>
 					</div> <!-- .content-inner -->
 				</div>
-				<a name="newsletter"></a>
 				<div class="episodes content-box">
 					<div class="content-inner">
 						<h4>Latest Episodes</h4>
@@ -87,7 +86,7 @@ get_header(); ?>
 									<?php if ( has_post_thumbnail() ): ?>
 										<div class="image">
 											<a href="<?php echo the_permalink() ?>">
-												<?php the_post_thumbnail( ) ?>
+												<?php the_post_thumbnail( 'medium' ) ?>
 											</a>
 										</div>
 									<?php endif; ?>
@@ -125,7 +124,7 @@ get_header(); ?>
 									<?php if ( has_post_thumbnail() ): ?>
 										<div class="image">
 											<a href="<?php echo the_permalink() ?>">
-												<?php the_post_thumbnail( ) ?>
+												<?php the_post_thumbnail( 'medium' ) ?>
 											</a>
 										</div>
 									<?php endif; ?>
@@ -154,7 +153,7 @@ get_header(); ?>
 									<?php if ( has_post_thumbnail() ): ?>
 										<div class="image">
 											<a href="<?php echo the_permalink() ?>">
-												<?php the_post_thumbnail( ) ?>
+												<?php the_post_thumbnail( 'medium' ) ?>
 											</a>
 										</div>
 									<?php endif; ?>
