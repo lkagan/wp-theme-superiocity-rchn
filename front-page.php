@@ -75,6 +75,7 @@ get_header(); ?>
 						<?php get_template_part('template-parts/content', 'email_subscribe'); ?>
 					</div> <!-- .content-inner -->
 				</div>
+				<a name="newsletter"></a>
 				<div class="episodes content-box">
 					<div class="content-inner">
 						<h4>Latest Episodes</h4>

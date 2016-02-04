@@ -239,6 +239,30 @@ button.menu-toggle {
   }
 }
 
+select {
+  max-width: 100%;
+}
+
+#post-2052 .sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  p {
+   margin: 1em;
+  }
+}
+
+.page-id-359 .email-buttons a {
+  width: 250px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.aligncenter {
+  margin: 0 auto;
+}
+
 /* Navigation */
 .main-navigation {
   display: inline-block;
@@ -1143,6 +1167,7 @@ a.page-numbers:hover {
   font-size: .85em;
 }
 
+
 .store-categories {
   display: flex;
   justify-content: space-around;
@@ -1150,7 +1175,7 @@ a.page-numbers:hover {
 
   .category {
     text-align: center;
-    margin: 2em;
+    margin-bottom: 1em;
 
     a:hover {
       text-decoration: underline;
@@ -1184,6 +1209,10 @@ a.page-numbers:hover {
 
 
 @media screen and (min-width: 600px) {
+
+  .store-categories .category {
+    margin: 1em;
+  }
 
   .rchn.resident-form fieldset, .rchn.confirm fieldset {
     box-shadow: $card-shadow;
