@@ -18,7 +18,7 @@
 			<div class="misc-buttons">
 				<?php if( ! is_front_page() ): ?>
 				<a href="/rchn-citizen-registration/" class="button light">Become a Registered Citizen</a>
-				<a href="/nation-newsletter/" class="button light">Sign up for the Newsletter</a>
+				<a href="/#newsletter" class="button light">Sign up for the Newsletter</a>
 				<a href="/rchn-store/" class="button light">Shop Awesome RCHN Gear</a>
 				<?php endif; ?>
 				<a href="https://itunes.apple.com/podcast/rc-heli-nation-v-2.0/id367091559?mt=2" class="button light">Subscribe on iTunes</a>

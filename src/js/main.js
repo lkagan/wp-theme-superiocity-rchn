@@ -154,27 +154,66 @@
              * Update search form field to search tags or categories as requested by user.
              */
             (function() {
-                var search_select = document.getElementById('search_value');
-                var selected_value = document.getElementById('selected_value');
+                var forms = document.getElementsByClassName('search-form');
 
-                search_select.addEventListener('change', function() {
-                    var search_type = '';
-                    var search_value = search_select[search_select.selectedIndex].value;
+                for(var i = 0; i < forms.length; ++i) {
 
-                    switch(search_value) {
-                        case 'RCHN':
-                        case 'review':
-                            search_type = 'tag';
-                            break;
-                        case 'tech-tips':
-                            search_type = 'category_name';
-                            break;
-                    }
+                    forms[i].addEventListener('submit', function() {
+                        var selects = this.getElementsByTagName('select');
+                        var search_select = selects[0];
+                        var selected_values = this.getElementsByClassName('selected_value');
+                        var selected_value = selected_values[0];
+                        var search_type = '';
+                        var search_value = search_select[search_select.selectedIndex].value;
 
-                    selected_value.setAttribute('name', search_type);
-                    selected_value.setAttribute('value', search_value);
-                });
+                        switch(search_value) {
+                            case 'RCHN':
+                            case 'review':
+                                search_type = 'tag';
+                                break;
+                            case 'tech-tips':
+                                search_type = 'category_name';
+                                break;
+                        }
+
+                        selected_value.setAttribute('name', search_type);
+                        selected_value.setAttribute('value', search_value);
+                    });
+                }
             })();
         });
+
+
+        /*
+         * Make video embeds responsive.
+         */
+        !(function() {
+            var fluid_vids = {
+                fluid_videos: function () {
+                    var iframes = document.getElementsByTagName('iframe');
+                    for (var i = 0; i < iframes.length; i++) {
+                        var iframe = iframes[i],
+                            players = /www.youtube.com|player.vimeo.com/;
+                        if (iframe.src.search(players) > 0) {
+                            var videoRatio = (iframe.height / iframe.width) * 100;
+                            iframe.style.position = 'absolute';
+                            iframe.style.top = '0';
+                            iframe.style.left = '0';
+                            iframe.width = '100%';
+                            iframe.height = '100%';
+                            var wrap = document.createElement('div');
+                            wrap.className = 'fluid-vids';
+                            wrap.style.width = '100%';
+                            wrap.style.position = 'relative';
+                            wrap.style.paddingTop = videoRatio + '%';
+                            var iframeParent = iframe.parentNode;
+                            iframeParent.insertBefore(wrap, iframe);
+                            wrap.appendChild(iframe);
+                        }
+                    }
+                }
+            };
+            fluid_vids.fluid_videos();
+        })();
     }
 )();
