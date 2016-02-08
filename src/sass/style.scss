@@ -382,7 +382,6 @@ select {
 }
 
 .home #masthead {
-  background: url(images/backs-on-air.jpg) no-repeat 60% center ;
   background-size: cover;
 }
 
@@ -1203,6 +1202,7 @@ a.page-numbers:hover {
     li {
       width: 50%;
       font-size: .85em;
+      border: none;
     }
 
     img {
