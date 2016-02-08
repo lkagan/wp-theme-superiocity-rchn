@@ -167,11 +167,7 @@ get_header(); ?>
 				<div class="videos content-box">
 					<div class="content-inner">
 						<h4>Latest Videos</h4>
-						<?php if ( wp_is_mobile() ): ?>
 							<?php echo do_shortcode( '[vimeography id="1"]' ); ?>
-						<?php else: ?>
-							<iframe src="//player.vimeo.com/hubnut/user/rchelination/uploaded_videos?color=ff6600&amp;background=ffffff&amp;slideshow=0&amp;video_title=1&amp;video_byline=0" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-						<?php endif; ?>
 						<br>
 						<a href="/media/rchn-videos/" class="small">see all videos &raquo;</a>
 					</div> <!-- .content-inner -->
