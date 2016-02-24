@@ -45,7 +45,7 @@
 					<style>
 						.home #masthead { background: none; }
 					</style>
-				<video loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/rchn-cover-poster.jpg">
+				<video loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover2.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/rchn-cover-poster.jpg">
 					<source src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4">
 				</video>
 				<?php else: ?>

@@ -1,19 +1,22 @@
-<form action="http://www.aweber.com/scripts/addlead.pl" method="post">
-	<input type="hidden" name="meta_web_form_id" value="1763146089" />
-	<input type="hidden" name="meta_split_id" value="" />
-	<input type="hidden" name="listname" value="nationlist" />
-	<input id="redirect_514cd556605d8f13c5d4b65539ffef47" type="hidden" name="redirect" value="http://www.aweber.com/thankyou-coi.htm?m=text" /> <input type="hidden" name="meta_adtracking" value="web_page" /> <input type="hidden" name="meta_message" value="1" /> <input type="hidden" name="meta_required" value="name,email" /> <input type="hidden" name="meta_tooltip" value="" />
-
-	<label for="name">Name:</label>
-	<input type="text" name="name" value="">
+<!-- Begin MailChimp Signup Form -->
+<form action="//rchelination.us1.list-manage.com/subscribe/post?u=dde6915e65544409a52f86b2c&amp;id=c69b8d2b82" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">Email</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 	<br>
-
-	<label for="email">Email:</label>
-	<input type="email" name="email" value="">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" id="mce-FNAME">
 	<br>
-
-	<input class="button solid" type="submit" name="submit" value="Subscribe" alt="Submit Form">
-	<p class="privacy">We don't share your email address. <a title="Privacy Policy" href="http://www.aweber.com/permission.htm" target="_blank">read more</a></p>
+	<label for="mce-LNAME">Last Name </label>
+	<input type="text" value="" name="LNAME" id="mce-LNAME">
+	<br>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    
+	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_dde6915e65544409a52f86b2c_c69b8d2b82" tabindex="-1" value=""></div>
+	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button solid">
+	<p class="privacy">We don't share your email address. </p>
 </form>
 <ul>
 	<li>Keep your finger on the pulse of the Nation.</li>
@@ -21,3 +24,5 @@
 	<li>Exclusive giveaways.</li>
 </ul>
 <a class="small" href="http://archive.aweber.com/nationlist/IVAhM/h/RCHN_NewsLetter_Issue_8.htm">browse the archives &raquo;</a>
+
+<!--End mc_embed_signup-->

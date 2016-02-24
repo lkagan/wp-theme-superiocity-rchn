@@ -641,9 +641,10 @@ select {
   }
 
   label {
-    width: 75px;
+    width: 150px;
     display: inline-block;
     font-weight: bold;
+    text-align: right;
   }
 
   input {
