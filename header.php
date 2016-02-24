@@ -43,12 +43,15 @@
 			<div class="vignette">
 				<?php if ( ! wp_is_mobile() ): ?>
 					<style>
-						#masthead { background: none; }
-						.site-branding {background-color: #000; }
+						.home #masthead { background: none; }
 					</style>
-				<video loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/rchn-cover-poster.jpg">
+				<video loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover2.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/rchn-cover-poster.jpg">
 					<source src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4">
 				</video>
+				<?php else: ?>
+					<style>
+						.home #masthead { background: url(<?= get_template_directory_uri() ?>/images/backs-on-air.jpg) no-repeat 60% center ; background-size: cover;}
+					</style>
 				<?php endif; ?>
 			</div>
 		</div>

@@ -167,7 +167,7 @@ get_header(); ?>
 				<div class="videos content-box">
 					<div class="content-inner">
 						<h4>Latest Videos</h4>
-						<?php echo do_shortcode( '[vimeography id="1"]' ); ?>
+							<?php echo do_shortcode( '[vimeography id="1"]' ); ?>
 						<br>
 						<a href="/media/rchn-videos/" class="small">see all videos &raquo;</a>
 					</div> <!-- .content-inner -->
