@@ -29,18 +29,18 @@ gulp.task('styles', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer('last 2 version'))
         .pipe(minifycss())
-        .pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/sass'}))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('.'))
 });
 
 // Process JS files
 gulp.task('scripts', function () {
     return gulp.src(jsPath + '/**/*.js')
-        //.pipe(sourcemaps.init())
+        pipe(sourcemaps.init())
         .pipe(concat('main.js'))
         .pipe(rename({suffix: '.min'}))
-        //.pipe(uglify())
-        //.pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: '/src/js'}))
+        pipe(uglify())
+        pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./js'))
         .pipe(livereload())
 });
