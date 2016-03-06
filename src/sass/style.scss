@@ -588,6 +588,7 @@ select {
   h1.page-title, h1.entry-title {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
     font-variant: small-caps;
+    width: 100%;
   }
 
   h2.entry-title a, h1.entry-title {
@@ -781,7 +782,7 @@ select {
   font-size: .75em;
 }
 
-.single main article.type-post, .page main article.type-page {
+.single main article.type-post, .page main article.type-page, #page-glossary {
   margin-top: 2em;
   @include article;
 
@@ -1197,6 +1198,19 @@ a.page-numbers:hover {
   }
 }
 
+#page-glossary {
+  dt {
+    color: $color_brand2;
+    font-weight: bold;
+    font-family: $font-fancy;
+  }
+
+  dd {
+    margin-left: 1em;
+  }
+}
+
+
 @media screen and (min-width: 350px) {
 
   .home .row ul.icon-list {
@@ -1290,6 +1304,12 @@ a.page-numbers:hover {
   .comment-list {
     ol.children {
       padding-left: 1em;
+    }
+  }
+
+  #page-glossary {
+    dd {
+      margin-left: 2.5em;
     }
   }
 }
