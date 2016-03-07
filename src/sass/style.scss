@@ -782,7 +782,7 @@ select {
   font-size: .75em;
 }
 
-.single main article.type-post, .page main article.type-page, #page-glossary {
+.single main article.type-post, .page main article.type-page {
   margin-top: 2em;
   @include article;
 
@@ -1198,7 +1198,7 @@ a.page-numbers:hover {
   }
 }
 
-#page-glossary {
+.rchn-definition-list {
   dt {
     color: $color_brand2;
     font-weight: bold;
@@ -1206,7 +1206,7 @@ a.page-numbers:hover {
   }
 
   dd {
-    margin-left: 1em;
+    margin: 0 0 1em 1em;
   }
 }
 
@@ -1307,7 +1307,7 @@ a.page-numbers:hover {
     }
   }
 
-  #page-glossary {
+  .rchn-definition-list {
     dd {
       margin-left: 2.5em;
     }

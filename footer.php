@@ -25,7 +25,7 @@
 				<a href="http://subscribeonandroid.com/www.rchelination.com/feed/podcast/" class="button light">Subscribe on Android</a>
 				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XWQHMF6J3CQY8" class="button light">Donate via Paypal</a>
 				<a href="http://www.helifreak.com/forumdisplay.php?f=445" class="button light">See us on HeliFreak</a>
-				<a href="/glossary" class="button light">Glossary</a>
+				<a href="/glossary" class="button light">Glossary</a> 
 			</div>
 		</div>
 		<div class="social">
