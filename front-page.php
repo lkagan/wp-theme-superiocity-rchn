@@ -43,6 +43,15 @@ get_header(); ?>
 				</audio>
 			</div>
 			<div class="container-center">
+				<div class="rchn4 content-box">
+					<div class="content-inner">
+						<h4>RCHN 4th Annual Fun Fly</h4>
+						<br>
+						<a href="/rchn-fun-fly/"><img src="http://www.rchelination.com/wp-content/uploads/2016/06/RCHN_FunFLy_sm_2016.jpg" alt="RCHN 4 Fun Fly 2016"></a>
+						<br><br>
+						<a href="/rchn-fun-fly/" class="button solid">Check it out!</a>
+					</div> <!-- .content-inner -->
+				</div>
 				<div class="citizen content-box">
 					<div class="content-inner">
 						<h4>Become a Registered Citizen</h4>
@@ -75,6 +84,14 @@ get_header(); ?>
 						<?php get_template_part('template-parts/content', 'email_subscribe'); ?>
 					</div> <!-- .content-inner -->
 				</div>
+			</div> <!-- .container-center -->
+		</div> <!-- .row -->
+		<div class="row sponsor">
+			<?php if (function_exists('vslider')) { vslider('homepage2a'); }?>
+			<?php if (function_exists('vslider')) { vslider('homepage2b'); }?>
+		</div>
+		<div class="row">
+			<div class="container-center">
 				<div class="episodes content-box">
 					<div class="content-inner">
 						<h4>Latest Episodes</h4>
@@ -98,14 +115,6 @@ get_header(); ?>
 						<a href="/tag/RCHN/" class="small">see all episodes &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .episodes -->
-			</div> <!-- .container-center -->
-		</div> <!-- .row -->
-		<div class="row sponsor">
-			<?php if (function_exists('vslider')) { vslider('homepage2a'); }?>
-			<?php if (function_exists('vslider')) { vslider('homepage2b'); }?>
-		</div>
-		<div class="row">
-			<div class="container-center">
 				<div class="reviews content-box">
 					<div class="content-inner">
 						<h4>Latest Reviews</h4>
@@ -172,29 +181,6 @@ get_header(); ?>
 						<a href="/media/rchn-videos/" class="small">see all videos &raquo;</a>
 					</div> <!-- .content-inner -->
 				</div> <!-- .videos-->
-
-
-
-
-
-
-
-				<div class="events content-box">
-					<div class="content-inner">
-						<h4>Upcoming Events</h4>
-						<?php echo do_shortcode( '[ai1ec events_limit="4" view="agenda"]' ); ?>
-						<a href="/calendar/" class="small">see all events &raquo;</a>
-					</div> <!-- .content-inner -->
-				</div> <!-- .events -->
-
-
-
-
-
-
-
-
-
 
 			</div> <!-- .container-center -->
 		</div> <!-- .row -->
