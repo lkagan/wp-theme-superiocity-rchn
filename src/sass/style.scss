@@ -544,6 +544,15 @@ select {
   }
 }
 
+.home .rchn4 {
+  text-align: center;
+}
+
+.home .rchn4 img {
+  border-radius: .25em;
+  box-shadow: $card-shadow;
+}
+
 .home .row ul.icon-list {
   display: flex;
   flex-wrap: wrap;
@@ -646,7 +655,6 @@ select {
     width: 150px;
     display: inline-block;
     font-weight: bold;
-    text-align: right;
   }
 
   input {
