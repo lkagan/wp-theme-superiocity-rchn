@@ -8,11 +8,6 @@
  */
 
 get_header(); ?>
-<?php if ( ! wp_is_mobile() ): ?>
-<style>
-	.home .row { background-attachment: fixed;}
-</style>
-<?php endif; ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">

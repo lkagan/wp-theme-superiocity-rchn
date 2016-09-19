@@ -110,6 +110,48 @@
          */
         document.addEventListener('DOMContentLoaded', function() {
 
+            var isMobile = false;
+
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                document.getElementsByTagName( 'body' )[0].classList.add( 'has-touch' );
+                isMobile = true;
+            }
+
+            /**
+             * Handle differeing functionality for mobile vs non-mobile devices.
+             */
+            (function() {
+                var masthead = document.querySelector( '.home #masthead' );
+                var introVideo = document.getElementById('intro-video');
+                var bgElements = document.querySelectorAll('.home .row');
+
+                if ( isMobile ) {
+                    if (masthead) {
+                        masthead.style.background = "url(" + template_directory_uri + "/images/backs-on-air.jpg) no-repeat 60% center";
+                        masthead.style.backgroundSize = 'cover';
+                    }
+
+                    if (introVideo) {
+                        introVideo.remove();
+                    }
+                } else {
+                    if ( bgElements ) {
+                        for ( var i = 0; i < bgElements.length; ++i ) {
+                            bgElements[i].style.backgroundAttachment = 'fixed';
+                        }
+                    }
+
+                    // No backgrond image on non-mobile devices
+                    if( masthead ) {
+                        masthead.style.background = 'none';
+                    }
+
+                    if (introVideo) {
+                        introVideo.setAttribute('poster', template_directory_uri + "/images/rchn-cover-poster.jpg")
+                    }
+                }
+            })();
+
             /**
              * Display / Hide the search box on larger screens
              */
