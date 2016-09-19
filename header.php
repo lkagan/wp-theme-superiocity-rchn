@@ -16,6 +16,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<script>
+	var template_directory_uri = '<?php echo get_template_directory_uri() ?>';
+</script>
 <?php wp_head(); ?>
 </head>
 
@@ -41,18 +44,9 @@
 				<a href="http://subscribeonandroid.com/www.rchelination.com/feed/podcast/" class="button light">Subscribe on Android</a>
 			</div>
 			<div class="vignette">
-				<?php if ( ! wp_is_mobile() ): ?>
-					<style>
-						.home #masthead { background: none; }
-					</style>
-				<video loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4" poster="<?= get_stylesheet_directory_uri() ?>/images/rchn-cover-poster.jpg">
+				<video id="intro-video" loop autoplay src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4">
 					<source src="<?= get_template_directory_uri() ?>/video/rchn-cover.mp4">
 				</video>
-				<?php else: ?>
-					<style>
-						.home #masthead { background: url(<?= get_template_directory_uri() ?>/images/backs-on-air.jpg) no-repeat 60% center ; background-size: cover;}
-					</style>
-				<?php endif; ?>
 			</div>
 		</div>
 		<?php endif; ?>
