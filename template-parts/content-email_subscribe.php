@@ -23,6 +23,6 @@
 	<li>In-depth, exclusive content.</li>
 	<li>Exclusive giveaways.</li>
 </ul>
-<a class="small" href="http://archive.aweber.com/nationlist/IVAhM/h/RCHN_NewsLetter_Issue_8.htm">browse the archives &raquo;</a>
+<a class="small" href="http://us1.campaign-archive1.com/home/?u=dde6915e65544409a52f86b2c&id=c69b8d2b82">browse the archives &raquo;</a>
 
 <!--End mc_embed_signup-->
